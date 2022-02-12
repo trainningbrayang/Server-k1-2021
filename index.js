@@ -1,17 +1,13 @@
-var a = 1.3 + 0.7;
+var express = require("express");
+//import express from 'express';
 
-if (a == '2') {
-    let b = 2;
-    console.log('log: ' + (a + b));
-}
-else {
-    console.log("log faile : ");
-}
+const app = express();
+const port = 3000;
+var info = require('./api/info');
+app.use('/info', info);
 
-var array = [1, 2, 3, 4, 5];
-// array.forEach((e) => {
-//     console.log(e);
-// });
-for (let i = 0; i < array.length; i++) {
-    console.log(array[i]);
-}
+
+app.listen(port, () => {
+    console.log(" Server node listion port " + port);
+
+});
